@@ -19,7 +19,7 @@
             <div class="carousel-item-c">
                 <div class="card-box-b card-shadow news-box">
                     <div class="img-box-b">
-                        <img src="img/post-2.jpg" alt="" class="img-b img-fluid">
+                        <img src="{{asset("assets")}}/img/post-2.jpg" alt="" class="img-b img-fluid">
                     </div>
                     <div class="card-overlay">
                         <div class="card-header-b">
@@ -42,7 +42,7 @@
             <div class="carousel-item-c">
                 <div class="card-box-b card-shadow news-box">
                     <div class="img-box-b">
-                        <img src="img/post-5.jpg" alt="" class="img-b img-fluid">
+                        <img src="{{asset("assets")}}/img/post-5.jpg" alt="" class="img-b img-fluid">
                     </div>
                     <div class="card-overlay">
                         <div class="card-header-b">
@@ -65,7 +65,7 @@
             <div class="carousel-item-c">
                 <div class="card-box-b card-shadow news-box">
                     <div class="img-box-b">
-                        <img src="img/post-7.jpg" alt="" class="img-b img-fluid">
+                        <img src="{{asset("assets")}}/img/post-7.jpg" alt="" class="img-b img-fluid">
                     </div>
                     <div class="card-overlay">
                         <div class="card-header-b">
@@ -88,7 +88,7 @@
             <div class="carousel-item-c">
                 <div class="card-box-b card-shadow news-box">
                     <div class="img-box-b">
-                        <img src="img/post-3.jpg" alt="" class="img-b img-fluid">
+                        <img src="{{asset("assets")}}/img/post-3.jpg" alt="" class="img-b img-fluid">
                     </div>
                     <div class="card-overlay">
                         <div class="card-header-b">

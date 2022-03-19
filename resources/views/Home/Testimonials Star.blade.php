@@ -16,7 +16,7 @@
                     <div class="row">
                         <div class="col-sm-12 col-md-6">
                             <div class="testimonial-img">
-                                <img src="img/testimonial-1.jpg" alt="" class="img-fluid">
+                                <img src="{{asset("assets")}}/img/testimonial-1.jpg" alt="" class="img-fluid">
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-6">
@@ -31,7 +31,7 @@
                                 </p>
                             </div>
                             <div class="testimonial-author-box">
-                                <img src="img/mini-testimonial-1.jpg" alt="" class="testimonial-avatar">
+                                <img src="{{asset("assets")}}/img/mini-testimonial-1.jpg" alt="" class="testimonial-avatar">
                                 <h5 class="testimonial-author">Albert & Erika</h5>
                             </div>
                         </div>
@@ -43,7 +43,7 @@
                     <div class="row">
                         <div class="col-sm-12 col-md-6">
                             <div class="testimonial-img">
-                                <img src="img/testimonial-2.jpg" alt="" class="img-fluid">
+                                <img src="{{asset("assets")}}/img/testimonial-2.jpg" alt="" class="img-fluid">
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-6">
@@ -58,7 +58,7 @@
                                 </p>
                             </div>
                             <div class="testimonial-author-box">
-                                <img src="img/mini-testimonial-2.jpg" alt="" class="testimonial-avatar">
+                                <img src="{{asset("assets")}}/img/mini-testimonial-2.jpg" alt="" class="testimonial-avatar">
                                 <h5 class="testimonial-author">Pablo & Emma</h5>
                             </div>
                         </div>
