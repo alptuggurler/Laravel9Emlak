@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-md-12 mb-2">
                     <div class="form-group">
-                        <label for="Type">Keyword</label>
+                        <label for="Type">Anahtar Kelime</label>
                         <input type="text" class="form-control form-control-lg form-control-a" placeholder="Keyword">
                     </div>
                 </div>
@@ -17,22 +17,22 @@
                     <div class="form-group">
                         <label for="Type">Type</label>
                         <select class="form-control form-control-lg form-control-a" id="Type">
-                            <option>All Type</option>
-                            <option>For Rent</option>
-                            <option>For Sale</option>
+                            <option>Tüm tipler</option>
+                            <option>Kiralama</option>
+                            <option>Satın alma</option>
                             <option>Open House</option>
                         </select>
                     </div>
                 </div>
                 <div class="col-md-6 mb-2">
                     <div class="form-group">
-                        <label for="city">City</label>
+                        <label for="city">Şehir</label>
                         <select class="form-control form-control-lg form-control-a" id="city">
-                            <option>All City</option>
-                            <option>Alabama</option>
-                            <option>Arizona</option>
-                            <option>California</option>
-                            <option>Colorado</option>
+                            <option>Hepsi</option>
+                            <option>Ankara</option>
+                            <option>Bursa</option>
+                            <option>İstanbul</option>
+                            <option>Karabük</option>
                         </select>
                     </div>
                 </div>
