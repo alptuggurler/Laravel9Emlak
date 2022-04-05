@@ -42,11 +42,10 @@
 
 @show
 @section('slider')
-test
 @show
-<div class="container">
-    @yield('content')
-</div>
+
+@yield('content')
+
 
 @include('home.footer Star')
 @section('footer')

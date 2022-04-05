@@ -49,7 +49,7 @@
                     </a>
                     <?php
                     $a= 0;
-                    if ($a==0){
+                    if ($a==0 ){
                     ?>
 
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
