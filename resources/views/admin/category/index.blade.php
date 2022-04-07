@@ -9,7 +9,8 @@
     <div class="main-panel">
 
         <div class="content-wrapper">
-            <h1>Category list</h1>
+            <h3 class="page-title"> Category list </h3>
+
         </div>
 
         <!-- content-wrapper ends -->
