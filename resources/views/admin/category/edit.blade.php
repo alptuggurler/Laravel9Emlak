@@ -13,7 +13,7 @@
                 <h3 class="page-title"> Edit Category : {{$data->title}} </h3>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Home</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Edit Category</li>
                     </ol>
                 </nav>
@@ -27,7 +27,7 @@
                         <h4 class="card-title">Category elements</h4>
                         <p class="card-description"> Category form elements </p>
 
-                        <form role="form" action="/admin/category/update/{{$data->id}}"  method="post">
+                        <form role="form" action="{{route('admin.category.update',['id'=>$data->id])}}"  method="post">
                             @csrf
                             <div class="form-group">
                                 <label for="exampleInputName1">Title</label>
