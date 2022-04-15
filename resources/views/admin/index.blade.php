@@ -9,8 +9,9 @@
     <div class="main-panel">
 
         <div class="content-wrapper">
-            <h1>test</h1>
-        </div>
+            <h1>test2222</h1>
+
+
 
         <!-- content-wrapper ends -->
 @endsection

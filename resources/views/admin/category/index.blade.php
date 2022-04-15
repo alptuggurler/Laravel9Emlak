@@ -32,9 +32,8 @@
                                 <thead>
                                 <tr>
                                     <th> ID </th>
+                                    <th> Parent </th>
                                     <th> Title </th>
-                                    <th> Keywords </th>
-                                    <th> Description </th>
                                     <th> Image </th>
                                     <th> Status </th>
                                     <th> Edit </th>
@@ -49,10 +48,15 @@
                                 @foreach( $data  as $rs)
                                 <tr>
                                     <td> {{$rs->id}} </td>
+                                    <td> {{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title)}}</td>
+
                                     <td> {{$rs->title}} </td>
-                                    <td> {{$rs->keywords}} </td>
-                                    <td> {{$rs->description}} </td>
-                                    <td> {{$rs->image}} </td>
+
+                                    <td>
+                                        @if($rs->image)
+                                        <img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" style="height: 40px">
+                                        @endif
+                                    </td>
                                     <td> {{$rs->status}} </td>
                                     <td><a href="{{route('admin.category.edit',['id'=>$rs->id])}}", class ='btn btn-block btn-success btn-sm'>Edit</a></td>
                                     <td><a href="{{route('admin.category.destroy',['id'=>$rs->id])}}", class ="btn btn-block btn-danger btn-sm"
