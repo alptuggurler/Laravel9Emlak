@@ -89,11 +89,11 @@
         </li>
 
          <li class="nav-item menu-items">
-             <a class="nav-link" href="/admin/home">
+             <a class="nav-link" href="/admin/house">
               <span class="menu-icon">
                 <i class="mdi mdi-home"></i>
               </span>
-                <span class="menu-title">Home</span>
+                <span class="menu-title">House</span>
             </a>
         </li>
 
