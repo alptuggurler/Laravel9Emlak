@@ -73,9 +73,17 @@
 
                             <!-- number of room -->
                             <div class="form-group">
-                                <label for="exampleInputName1">Number of Room</label>
-                                <input type="number" class="form-control" name="number_of_room" value="{{$data->number_of_room}}">
+                                <label>Number of Room</label>
+                                <select class="form-control" name="number_of_room"  value="{{$data->number_of_room}}">
+                                    <option selected>{{$data->number_of_room}}  </option>
+                                    @for($i=0 ; $i<=10 ; $i++)
+                                        @for($k=0; $k<=10; $k++)
+                                            <option >{{$i."+".$k}}</option>
+                                        @endfor
+                                    @endfor
+                                </select>
                             </div>
+
 
                             <!-- Floor location -->
                             <div class="form-group">
@@ -127,8 +135,8 @@
                                 <label>Heating</label>
                                 <select class="form-control" name="heating" value="{{$data->heating}}">
                                     <option selected>{{$data->heating}}  </option>
-                                    <option>True</option>
-                                    <option>False</option>
+                                    <option>Kombi</option>
+                                    <option>Soba</option>
                                 </select>
                             </div>
 

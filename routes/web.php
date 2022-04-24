@@ -2,6 +2,7 @@
 
 
 use App\Http\Controllers\AdminPanel\AdminHouseController as AdminHouseController;
+use App\Http\Controllers\AdminPanel\ImageController as AdminImageController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
 use App\Http\Controllers\AdminPanel\CategoryController as AdminCategoryController;
@@ -63,6 +64,15 @@ Route::prefix('/admin')->name('admin.')->group(function () {
         Route::post('/update/{id}', 'update')->name('update');
         Route::get('/destroy/{id}', 'destroy')->name('destroy');
         Route::get('/show/{id}', 'show')->name('show');
+    });
+
+
+    //******************* ADMIN House Images ROUTESS ********************
+    Route::prefix('/image')->name('image.')->controller(AdminImageController::class)->group(function () {
+        Route::get('/{hid}',  'index')->name('index');
+        Route::post('/store/{hid}', 'store')->name('store');
+        Route::post('/update/{hid}/{id}', 'update')->name('update');
+        Route::get('/destroy/{hid}/{id}', 'destroy')->name('destroy');
     });
 });
 

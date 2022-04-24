@@ -74,10 +74,17 @@
                             </div>
 
                             <!-- number of room -->
-                            <div class="form-group">
-                                <label for="exampleInputName1">Number of Room</label>
-                                <input type="number" class="form-control" name="number_of_room" placeholder="Number of room">
+                            <div class="form-group" >
+                                <label>Number of Room</label>
+                                <select class="form-control" name="number_of_room" >
+                                    @for($i=0 ; $i<=10 ; $i++)
+                                        @for($k=0; $k<=3; $k++)
+                                            <option >{{$i."+".$k}}</option>
+                                        @endfor
+                                    @endfor
+                                </select>
                             </div>
+
 
                             <!-- Floor location -->
                             <div class="form-group">
@@ -107,7 +114,7 @@
                             <div class="form-group" >
                                 <label>Year built</label>
                                 <select class="form-control" name="year_built" >
-                                    @for($i=2022 ; $i>=1900 ; $i--)
+                                    @for($i=2022 ; $i>=1950 ; $i--)
                                         <option >{{$i}}</option>
                                     @endfor
                                 </select>
@@ -127,8 +134,8 @@
                             <div class="form-group" >
                                 <label>Heating</label>
                                 <select class="form-control" name="heating" >
-                                    <option>True</option>
-                                    <option>False</option>
+                                    <option>Kombi</option>
+                                    <option>Soba</option>
                                 </select>
                             </div>
 
