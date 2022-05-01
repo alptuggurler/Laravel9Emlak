@@ -141,6 +141,7 @@ class AdminHouseController extends Controller
         $data->heating = $request->heating;
         $data->dues = $request->dues;
         $data->salers = $request->salers;
+        $data->sehir = $request->sehir;
         $data->status = $request->status;
         if($request->file('image')){
             $data->image= $request->file('image')->store('images');

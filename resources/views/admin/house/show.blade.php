@@ -126,8 +126,13 @@
                             </tr>
 
                             <tr>
+                                <th >sehir</th>
+                                <td>{{$data->sehir}}</td>
+                            </tr>
+
+                            <tr>
                                 <th >Detail</th>
-                                <td>{{$data->detail}}</td>
+                                <td>{!! $data->detail !!}</td>
                             </tr>
 
                             <tr>

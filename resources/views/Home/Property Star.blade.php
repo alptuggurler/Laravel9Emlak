@@ -1,3 +1,5 @@
+
+
 <!--/ Property Star /-->
 <section class="section-property section-t8">
     <div class="container">
@@ -15,23 +17,28 @@
                 </div>
             </div>
         </div>
+
+
         <div id="property-carousel" class="owl-carousel owl-theme">
+
+            <!--/ ilk ressim /-->
+            @foreach($houselist1 as $rs)
             <div class="carousel-item-b">
                 <div class="card-box-a card-shadow">
                     <div class="img-box-a">
-                        <img src="{{asset("assets")}}/img/property-6.jpg" alt="" class="img-a img-fluid">
+                        <img src="{{Storage::url($rs->image)}}" style="height: 350px;width: 360px"  alt="" class="img-a img-fluid">
                     </div>
                     <div class="card-overlay">
                         <div class="card-overlay-a-content">
                             <div class="card-header-a">
                                 <h2 class="card-title-a">
-                                    <a href="property-single.html">206 Mount
-                                        <br /> Olive Road Two</a>
+                                    <a href="{{route('house',['id'=>$rs->id])}}">{{$rs->id}}-{{$rs->category->title}}
+                                        <br /> {{$rs->title}}</a>
                                 </h2>
                             </div>
                             <div class="card-body-a">
                                 <div class="price-box d-flex">
-                                    <span class="price-a">rent | $ 12.000</span>
+                                    <span class="price-a">Buy | {{$rs->price}}TL</span>
                                 </div>
                                 <a href="#" class="link-a">Click here to view
                                     <span class="ion-ios-arrow-forward"></span>
@@ -41,21 +48,21 @@
                                 <ul class="card-info d-flex justify-content-around">
                                     <li>
                                         <h4 class="card-info-title">Area</h4>
-                                        <span>340m
+                                        <span>{{$rs->square}}m
                         <sup>2</sup>
                       </span>
                                     </li>
                                     <li>
                                         <h4 class="card-info-title">Beds</h4>
-                                        <span>2</span>
+                                        <span>{{$rs->bedrooms}}</span>
                                     </li>
                                     <li>
                                         <h4 class="card-info-title">Baths</h4>
-                                        <span>4</span>
+                                        <span>{{$rs->bathrooms}}</span>
                                     </li>
                                     <li>
                                         <h4 class="card-info-title">Garages</h4>
-                                        <span>1</span>
+                                        <span>{{$rs->parking}}</span>
                                     </li>
                                 </ul>
                             </div>
@@ -63,6 +70,9 @@
                     </div>
                 </div>
             </div>
+        @endforeach
+            <!--/ Geriye kalan
+
             <div class="carousel-item-b">
                 <div class="card-box-a card-shadow">
                     <div class="img-box-a">
@@ -204,6 +214,8 @@
                     </div>
                 </div>
             </div>
+
+            /-->
         </div>
     </div>
 </section>

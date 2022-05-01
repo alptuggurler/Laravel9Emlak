@@ -21,8 +21,8 @@ return new class extends Migration
             $table->string('keywords')->nullable();
             $table->string('description')->nullable();
             $table->string('image')->nullable();
-            $table->string('detail')->nullable();
-            $table->float('price')->nullable();
+            $table->text('detail')->nullable();
+            $table->bigInteger('price')->nullable();
             $table->integer('square')->nullable();/* m^2 */
             $table->string('number_of_room')->nullable();
             $table->integer('floor_location')->nullable();
@@ -34,7 +34,10 @@ return new class extends Migration
             $table->string('heating')->nullable();
             $table->integer('dues')->nullable();/* aidat */
             $table->string('salers')->nullable();/* emlak or sahibinden */
+            $table->string('sehir')->nullable();
             $table->string('status',6)->default('False');
+            $table->string('sehir')->nullable();
+
             $table->timestamps();
         });
     }

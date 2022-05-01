@@ -7,7 +7,7 @@
             <span></span>
             <span></span>
         </button>
-        <a class="navbar-brand text-brand" href="index.html">Gürler<span class="color-b">Emlak</span></a>
+        <a class="navbar-brand text-brand" href="/">N<span class="color-b">Emlak</span></a>
         <button type="button" class="btn btn-link nav-search navbar-toggle-box-collapse d-md-none" data-toggle="collapse"
                 data-target="#navbarTogglerDemo01" aria-expanded="false">
             <span class="fa fa-search" aria-hidden="true"></span>
@@ -15,7 +15,7 @@
         <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" href="index.html">Anasayfa</a>
+                    <a class="nav-link active" href="/">Anasayfa</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="about.html">Hakkında</a>

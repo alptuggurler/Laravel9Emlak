@@ -2,6 +2,10 @@
 
 @section('title', 'Add House ')
 
+@section('head')
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+
+@endsection
 
 @section('content')
     <!-- partial -->
@@ -149,15 +153,31 @@
 
                             <!-- salers -->
                             <div class="form-group">
-                                <label for="exampleInputName1">salers</label>
+                                <label for="exampleInputName1" >salers</label>
                                 <input type="text" class="form-control" name="salers" placeholder="Salers">
                             </div>
 
+                            <!-- sehir -->
+                            <div class="form-group">
+                                <label for="exampleInputName1" >sehir</label>
+                                <input type="text" class="form-control" name="sehir" placeholder="Sehir">
+                            </div>
 
                             <!-- Detail -->
                             <div class="form-group">
-                                <label for="exampleInputName1">Detail</label>
-                                <textarea class="form-control" name="detail"></textarea>
+                                <label for="exampleInputName1" >Detail</label>
+                                <textarea class="form-control" id="detail" name="detail">
+                                </textarea>
+                                <script >
+                                    ClassicEditor
+                                        .create( document.querySelector( '#detail' ))
+                                        .then( editor => {
+                                            console.log( editor );
+                                        } )
+                                        .catch( error => {
+                                            console.error( error );
+                                        } );
+                                </script>
 
                             </div>
 

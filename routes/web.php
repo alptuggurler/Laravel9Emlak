@@ -32,6 +32,8 @@ Route::get('/', [HomeController::class, 'index'])->name('index');
 });
 */
 
+Route::get('/house/{id}', [HomeController::class, 'house'])->name('house');
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
