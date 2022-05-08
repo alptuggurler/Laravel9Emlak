@@ -1,6 +1,10 @@
 <!--/ Nav Star /-->
 <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
     <div class="container">
+
+        @php
+            $mainCategories = \App\Http\Controllers\HomeController::maincategorylist()
+        @endphp
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
                 aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span></span>
@@ -18,7 +22,7 @@
                     <a class="nav-link active" href="/">Anasayfa</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="about.html">Hakkında</a>
+                    <a class="nav-link " href="about.html">Hakkında</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="property-grid.html">Emlak</a>
@@ -26,18 +30,62 @@
                 <li class="nav-item">
                     <a class="nav-link" href="blog-grid.html">Blog</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+
+
+                    <li class="nav-item dropdown ">
+                        <a class="nav-link dropdown-toggle " href="/" id="navbarDropdown" role="button" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">
+                            Categories
+                        </a>
+
+
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <ul>
+                                @foreach($mainCategories as $rs)
+
+
+                                    <a class="nav-link dropdown-toggle " href="property-single.html" id="navbarDropdown2" role="button" data-toggle="dropdown"
+                                       aria-haspopup="true" aria-expanded="false">
+                                        {{$rs->title}}
+                                    </a>
+
+                                    <div class="dropdown " aria-labelledby="navbarDropdown2">
+
+                                        <div>
+                                            <a class="dropdown-item" href="property-single.html">Property Single</a>
+                                            <a class="dropdown-item" href="blog-single.html">Blog Single</a>
+                                            <a class="dropdown-item" href="agents-grid.html">Agents Grid</a>
+                                            <a class="dropdown-item" href="agent-single.html">Agent Single</a>
+
+                                        </div>
+                                    </div>
+
+                                @endforeach
+
+                            </ul>
+                        </div>
+
+                    </li>
+
+
+                <!--/ test için sildim
+                @foreach($mainCategories as $rs)
+                <li class="nav-item dropdown ">
+                    <a class="nav-link dropdown-toggle " href="/" id="navbarDropdown" role="button" data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false">
-                        Sayfa
+                        Categories
                     </a>
+
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="property-single.html">Property Single</a>
                         <a class="dropdown-item" href="blog-single.html">Blog Single</a>
                         <a class="dropdown-item" href="agents-grid.html">Agents Grid</a>
                         <a class="dropdown-item" href="agent-single.html">Agent Single</a>
                     </div>
+
                 </li>
+                @endforeach
+                /-->
                 <li class="nav-item">
                     <a class="nav-link" href="contact.html">İletişim</a>
                 </li>

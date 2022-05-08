@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\House;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -11,6 +12,9 @@ class HomeController extends Controller
     //
     public function test(){
         echo "Test Page";
+    }
+    public static function maincategorylist(){
+        return Category::where('parent_id','=',0)->with('children')->get();
     }
 
     public function index(){

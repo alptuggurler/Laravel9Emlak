@@ -14,4 +14,20 @@ class Category extends Model
     {
         return $this->hasMany(House::class);
     }
+
+
+    #one to Many Iverse
+    public function parent()
+    {
+        return $this->belongsTo(Category::class, 'parent_id');
+    }
+
+
+    #one to Many
+    public function children()
+    {
+        return $this->hasMany(Category::class,'parent_id');
+    }
+
+
 }
