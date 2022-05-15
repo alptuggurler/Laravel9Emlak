@@ -4,7 +4,7 @@
 
 
 @section('content')
-    <!-- partial -->
+    <!-- partials -->
 
     <div class="main-panel">
 

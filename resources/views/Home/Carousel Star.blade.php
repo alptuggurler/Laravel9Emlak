@@ -13,7 +13,7 @@
                         <div class="row">
                             <div class="col-lg-8">
                                 <div class="intro-body">
-                                    <p class="intro-title-top">Doral, Florida
+                                    <p class="intro-title-top">Doral , Florida
                                         <br> 78345</p>
                                     <h1 class="intro-title mb-4">
                                         <span class="color-b">{{$rs->id}} </span> {{$rs->category->title}}

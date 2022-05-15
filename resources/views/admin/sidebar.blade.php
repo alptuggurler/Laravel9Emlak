@@ -1,5 +1,5 @@
 
-<!-- partial:../../partials/_sidebar.html -->
+<!-- partial:../../partials/_sidebar.htmls -->
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
         <a class="sidebar-brand brand-logo" href="/admin"><img src="{{asset("assets")}}/admin/assets/images/logo.svg" alt="logo" /></a>

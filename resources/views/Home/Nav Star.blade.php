@@ -31,32 +31,66 @@
                     <a class="nav-link" href="blog-grid.html">Blog</a>
                 </li>
 
-
-                    <li class="nav-item dropdown ">
-                        <a class="nav-link dropdown-toggle " href="/" id="navbarDropdown" role="button" data-toggle="dropdown"
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="/" id="navbarDropdown1" role="button" data-toggle="dropdown"
                            aria-haspopup="true" aria-expanded="false">
                             Categories
-                        </a>
+                    </a>
 
 
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu " aria-labelledby="navbarDropdown2">
                             <ul>
+                                @foreach($mainCategories as $rs)
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle hidden" href="/" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                       aria-haspopup="true" aria-expanded="false">
+                                        {{$rs->title}}
+                                    </a>
+                                    <div class="dropdown">
+                                        <a class="dropdown-item " href="property-single.html">Property Single</a>
+                                        <a class="dropdown-item" href="blog-single.html">Blog Single</a>
+                                        <a class="dropdown-item" href="agents-grid.html">Agents Grid</a>
+                                        <a class="dropdown-item" href="agent-single.html">Agent Single</a>
+                                    <!--/ test içins
+                                    @if(count($rs->children))
+
+
+
+                                    @endif
+
+                                    /-->
+
+                                    </div>
+                                </li>
+                                @endforeach
+                            </ul>
+
+                        </div>
+                        @foreach($mainCategories as $rs)
+
+                    @endforeach
+
+
+
+                    <!--/ test için sildim
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <ul >
                                 @foreach($mainCategories as $rs)
 
 
-                                    <a class="nav-link dropdown-toggle " href="property-single.html" id="navbarDropdown2" role="button" data-toggle="dropdown"
+                                    <a class="nav-link dropdown-toggle" href="property-single.html" id="navbarDropdown" role="button" data-toggle="dropdown"
                                        aria-haspopup="true" aria-expanded="false">
                                         {{$rs->title}}
                                     </a>
 
-                                    <div class="dropdown " aria-labelledby="navbarDropdown2">
+                                    <div >
 
-                                        <div>
-                                            <a class="dropdown-item" href="property-single.html">Property Single</a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                                            <a class="dropdown-item" href="property-single.html">Property Single {{$rs->title}}</a>
                                             <a class="dropdown-item" href="blog-single.html">Blog Single</a>
                                             <a class="dropdown-item" href="agents-grid.html">Agents Grid</a>
                                             <a class="dropdown-item" href="agent-single.html">Agent Single</a>
-
                                         </div>
                                     </div>
 
@@ -66,7 +100,7 @@
                         </div>
 
                     </li>
-
+/-->
 
                 <!--/ test için sildim
                 @foreach($mainCategories as $rs)

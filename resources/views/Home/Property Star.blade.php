@@ -1,6 +1,6 @@
 
 
-<!--/ Property Star /-->
+<!--/ Property Star s/-->
 <section class="section-property section-t8">
     <div class="container">
         <div class="row">

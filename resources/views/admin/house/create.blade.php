@@ -163,6 +163,50 @@
                                 <input type="text" class="form-control" name="sehir" placeholder="Sehir">
                             </div>
 
+                            <!-- seçmeli box -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input"> Default <i class="input-helper"></i></label>
+                                        </div>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" checked=""> Checked <i class="input-helper"></i></label>
+                                        </div>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" disabled=""> Disabled <i class="input-helper"></i></label>
+                                        </div>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" disabled="" checked=""> Disabled checked <i class="input-helper"></i></label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value=""> Default <i class="input-helper"></i></label>
+                                        </div>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2" checked=""> Selected <i class="input-helper"></i></label>
+                                        </div>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="radio" class="form-check-input" name="optionsRadios2" id="optionsRadios3" value="option3" disabled=""> Disabled <i class="input-helper"></i></label>
+                                        </div>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="radio" class="form-check-input" name="optionsRadio2" id="optionsRadios4" value="option4" disabled="" checked=""> Selected and disabled <i class="input-helper"></i></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                             <!-- Detail -->
                             <div class="form-group">
                                 <label for="exampleInputName1" >Detail</label>
