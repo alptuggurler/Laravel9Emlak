@@ -8,7 +8,7 @@
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{asset("assets")}}/admin/assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="{{asset("assets")}}/admin/assets/vendors/css/vendor.bundle.base.css">
-    <!-- endinject -->
+    <!-- endinject  -->
     <!-- Plugin css for this page -->
     <!-- End Plugin css for this page -->
     <!-- inject:css -->
@@ -22,6 +22,7 @@
     @yield("head")
 </head>
 
+
 <body>
 <div class="container-scroller">
 
@@ -34,7 +35,7 @@
 
 @yield('content')
 
-
+</div>
 @include('admin.footer')
 @yield('foot')
 
