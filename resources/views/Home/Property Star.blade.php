@@ -40,7 +40,7 @@
                                 <div class="price-box d-flex">
                                     <span class="price-a">Buy | {{$rs->price}}TL</span>
                                 </div>
-                                <a href="#" class="link-a">Click here to view
+                                <a href="{{route('house',['id'=>$rs->id])}}" class="link-a">Click here to view
                                     <span class="ion-ios-arrow-forward"></span>
                                 </a>
                             </div>
@@ -74,6 +74,7 @@
             <!--/ Geriye kalan
 
             <div class="carousel-item-b">
+
                 <div class="card-box-a card-shadow">
                     <div class="img-box-a">
                         <img src="{{asset("assets")}}/img/property-3.jpg" alt="" class="img-a img-fluid">

@@ -37,4 +37,17 @@ class HomeController extends Controller
             'images'=>$images
         ]);
     }
+
+    public function categoryhouse($id){
+
+
+
+        $category = Category::find($id);
+
+        $houses = DB::table('houses')->where('category_id',$id)->get();
+        return view('home.categoryhouses',[
+            'category'=>$category,
+            'houses'=>$houses
+        ]);
+    }
 }

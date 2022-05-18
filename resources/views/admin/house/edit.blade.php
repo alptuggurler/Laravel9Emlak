@@ -168,7 +168,7 @@
                             <!-- Detail -->
                             <div class="form-group">
                                 <label for="exampleInputName1">Detail</label>
-                                <textarea class="form-control" id="detail" name="detail">{{!! $data->detail !!}}</textarea>
+                                <textarea  id="detail" name="detail">{{$data->detail }}</textarea>
                                 <script>
                                     ClassicEditor
                                         .create( document.querySelector( '#detail' ) )
@@ -178,6 +178,7 @@
                                         .catch( error => {
                                             console.error( error );
                                         } );
+
                                 </script>
 
                             </div>
@@ -214,7 +215,7 @@
 
 @endsection
         @section('foot')
-            <!-- 22222222222222222222222-->
+            <!-- 22222222222222222222222 -->
                 <script src="{{asset("assets")}}/admin/assets/js/file-upload.js"></script>
                 <script src="{{asset("assets")}}/admin/assets/js/typeahead.js"></script>
                 <script src="{{asset("assets")}}/admin/assets/js/select2.js"></script>

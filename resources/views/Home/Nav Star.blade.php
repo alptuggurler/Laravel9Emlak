@@ -10,8 +10,9 @@
             <span></span>
             <span></span>
             <span></span>
+
         </button>
-        <a class="navbar-brand text-brand" href="/">N<span class="color-b">Emlak</span></a>
+        <a class="navbar-brand text-brand" href="{{route('home')}}">N<span class="color-b">Emlak</span></a>
         <button type="button" class="btn btn-link nav-search navbar-toggle-box-collapse d-md-none" data-toggle="collapse"
                 data-target="#navbarTogglerDemo01" aria-expanded="false">
             <span class="fa fa-search" aria-hidden="true"></span>
@@ -47,18 +48,12 @@
                                         {{$rs->title}}
                                     </a>
                                     <div class="dropdown">
-                                        <a class="dropdown-item " href="property-single.html">Property Single</a>
-                                        <a class="dropdown-item" href="blog-single.html">Blog Single</a>
-                                        <a class="dropdown-item" href="agents-grid.html">Agents Grid</a>
-                                        <a class="dropdown-item" href="agent-single.html">Agent Single</a>
-                                    <!--/ test içins
                                     @if(count($rs->children))
 
+                                        @include('home.categorytree',['children' => $rs->children])
 
 
                                     @endif
-
-                                    /-->
 
                                     </div>
                                 </li>
