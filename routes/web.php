@@ -49,7 +49,7 @@ Route::prefix('/admin')->name('admin.')->group(function () {
 
     //******************* Geneal  ROUTESS ********************
     Route::get('/setting', [AdminHomeController::class, 'setting'])->name('setting');
-    Route::get('/settingUp', [AdminHomeController::class, 'settingUpdate'])->name('setting');
+    Route::post('/setting', [AdminHomeController::class, 'settingUpdate'])->name('setting.update');
 
 
 

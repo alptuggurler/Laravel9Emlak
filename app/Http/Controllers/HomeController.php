@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\House;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -19,11 +20,16 @@ class HomeController extends Controller
 
     public function index(){
         //echo "index";
+        $page="home";
         $sliderdata =House::limit(4)->get();
         $houselist1 =House::limit(6)->get();
+        $setting= Setting::first();
+
         return view('home.index',[
             'sliderdata'=>$sliderdata,
-            'houselist1'=>$houselist1
+            'page'=>$page,
+            'houselist1'=>$houselist1,
+            'setting'=>$setting
         ]);
     }
 

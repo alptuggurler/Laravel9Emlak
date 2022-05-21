@@ -2,9 +2,10 @@
 <head>
     <meta charset="utf-8">
     <title> @yield('title')</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+    <meta content="@yield("keywords")" name="keywords">
+    <meta content="@yield("description")" name="description">
+    <meta content="Alptug Gurler" name="author">
+    <link rel="icon" type="image/x-icon" href="@yield("icon")">
 
     <!-- Favicons -->
     <link href="{{asset("assets")}}/img/favicon.png" rel="icon">

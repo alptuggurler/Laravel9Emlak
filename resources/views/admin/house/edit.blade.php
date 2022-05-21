@@ -3,6 +3,12 @@
 @section('title', 'Edit House :'.$data->title)
 @section('head')
     <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
+
 @endsection
 
 
@@ -168,18 +174,16 @@
                             <!-- Detail -->
                             <div class="form-group">
                                 <label for="exampleInputName1">Detail</label>
-                                <textarea  id="detail" name="detail">{{$data->detail }}</textarea>
-                                <script>
-                                    ClassicEditor
-                                        .create( document.querySelector( '#detail' ) )
-                                        .then( editor => {
-                                            console.log( editor );
-                                        } )
-                                        .catch( error => {
-                                            console.error( error );
-                                        } );
+                                <textarea  id="detail" name="detail">{{ $data->detail}}</textarea>
 
+                                <script>
+                                    $('#detail').summernote({
+                                        placeholder: '',
+                                        tabsize: 2,
+                                        height: 1000
+                                    });
                                 </script>
+
 
                             </div>
 
