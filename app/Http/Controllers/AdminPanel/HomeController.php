@@ -54,7 +54,7 @@ class HomeController extends Controller
         $data->contact = $request->input ('contact');
         $data->references = $request->input('references');
         if($request->file('icon')){
-            $data->image= $request->file('image')->store('images');
+            $data->icon= $request->file('icon')->store('images');
         }
 
         $data->status = $request->input('status');

@@ -26,7 +26,13 @@ Route::get('/hello', function () {
 //Get Controller Function
 Route::get('/test/', [HomeController::class, 'test'])->name('test');
 
+
+//******************* HOME PAGES ROUTESS ********************
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/about', [HomeController::class, 'about'])->name('about');
+Route::get('/references', [HomeController::class, 'references'])->name('references');
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+
 /*Route::get('/', function () {
     return view('welcome');
 });

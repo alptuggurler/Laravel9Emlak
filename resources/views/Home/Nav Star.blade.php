@@ -20,16 +20,16 @@
         <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" href="/">Anasayfa</a>
+                    <a class="nav-link active" href="{{route('home')}}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="about.html">Hakkında</a>
+                    <a class="nav-link " href="{{route('about')}}">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="property-grid.html">Emlak</a>
+                    <a class="nav-link" href="{{route('references')}}">References</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="blog-grid.html">Blog</a>
+                    <a class="nav-link" href="">House</a>
                 </li>
 
                 <li class="nav-item dropdown">
@@ -116,7 +116,7 @@
                 @endforeach
                 /-->
                 <li class="nav-item">
-                    <a class="nav-link" href="contact.html">İletişim</a>
+                    <a class="nav-link" href="{{route('contact')}}">Contact</a>
                 </li>
 
                 <li class="nav-item dropdown">
