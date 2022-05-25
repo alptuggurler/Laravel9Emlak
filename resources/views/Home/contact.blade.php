@@ -52,7 +52,9 @@
                 <div class="col-sm-12 section-t8">
                     <div class="row">
                         <div class="col-md-7">
-                            <form class="form-a contactForm" action="" method="post" role="form">
+                            @include('home.messages')
+                            <form class="form-a" action="{{route("storemessage")}}" method="post" role="form">
+                                @csrf
                                 <div id="sendmessage">Your message has been sent. Thank you!</div>
                                 <div id="errormessage"></div>
                                 <div class="row">
@@ -68,9 +70,18 @@
                                             <div class="validation"></div>
                                         </div>
                                     </div>
+
                                     <div class="col-md-12 mb-3">
                                         <div class="form-group">
-                                            <input type="url" name="subject" class="form-control form-control-lg form-control-a" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
+                                            <input type="tel" name="phone" class="form-control form-control-lg form-control-a" placeholder="Your Phone" data-rule="minlen:9" data-msg="Please enter at least 4 chars">
+                                            <div class="validation"></div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-12 mb-3">
+                                        <div class="form-group">
+                                            <input type="text" name="subject" class="form-control form-control-lg form-control-a" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
                                             <div class="validation"></div>
                                         </div>
                                     </div>
@@ -86,6 +97,7 @@
                                 </div>
                             </form>
                         </div>
+
                         <div class="col-md-5 section-md-t3">
                             <div class="icon-box section-b2">
                                 <div class="icon-box-icon">
@@ -100,7 +112,7 @@
                                             <span class="color-a">contact@example.com</span>
                                         </p>
                                         <p class="mb-1">Phone.
-                                            <span class="color-a">+54 356 945234</span>
+                                            <span class="color-a">+90 538 000 00 00</span>
                                         </p>
                                     </div>
                                 </div>

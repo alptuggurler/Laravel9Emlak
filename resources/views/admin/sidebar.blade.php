@@ -62,7 +62,7 @@
 
 
         <li class="nav-item menu-items">
-            <a class="nav-link" href="../../index.html">
+            <a class="nav-link" href="">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
@@ -70,14 +70,6 @@
             </a>
         </li>
 
-        <li class="nav-item menu-items">
-            <a class="nav-link" href="/admin">
-              <span class="menu-icon">
-                <i class="mdi mdi-speedometer"></i>
-              </span>
-                <span class="menu-title">Dashboardxx</span>
-            </a>
-        </li>
 
         <li class="nav-item menu-items">
             <a class="nav-link" href="/admin/category">
@@ -116,7 +108,7 @@
         </li>
 
         <li class="nav-item menu-items">
-            <a class="nav-link" href="/admin/messages">
+            <a class="nav-link" href="{{route('admin.message.index')}}">
               <span class="menu-icon">
             <i class="mdi mdi-message-outline"></i>
             </span>
