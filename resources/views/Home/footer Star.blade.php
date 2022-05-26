@@ -163,6 +163,7 @@
 <div id="preloader"></div>
 
 <!-- JavaScript Libraries -->
+
 <script src="{{asset("assets")}}/lib/jquery/jquery.min.js"></script>
 <script src="{{asset("assets")}}/lib/jquery/jquery-migrate.min.js"></script>
 <script src="{{asset("assets")}}/lib/popper/popper.min.js"></script>

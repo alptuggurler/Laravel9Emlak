@@ -67,56 +67,13 @@
 
 
 
-                    <!--/ test için sildim
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <ul >
-                                @foreach($mainCategories as $rs)
 
-
-                                    <a class="nav-link dropdown-toggle" href="property-single.html" id="navbarDropdown" role="button" data-toggle="dropdown"
-                                       aria-haspopup="true" aria-expanded="false">
-                                        {{$rs->title}}
-                                    </a>
-
-                                    <div >
-
-                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-                                            <a class="dropdown-item" href="property-single.html">Property Single {{$rs->title}}</a>
-                                            <a class="dropdown-item" href="blog-single.html">Blog Single</a>
-                                            <a class="dropdown-item" href="agents-grid.html">Agents Grid</a>
-                                            <a class="dropdown-item" href="agent-single.html">Agent Single</a>
-                                        </div>
-                                    </div>
-
-                                @endforeach
-
-                            </ul>
-                        </div>
-
-                    </li>
-/-->
-
-                <!--/ test için sildim
-                @foreach($mainCategories as $rs)
-                <li class="nav-item dropdown ">
-                    <a class="nav-link dropdown-toggle " href="/" id="navbarDropdown" role="button" data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false">
-                        Categories
-                    </a>
-
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="property-single.html">Property Single</a>
-                        <a class="dropdown-item" href="blog-single.html">Blog Single</a>
-                        <a class="dropdown-item" href="agents-grid.html">Agents Grid</a>
-                        <a class="dropdown-item" href="agent-single.html">Agent Single</a>
-                    </div>
-
-                </li>
-                @endforeach
-                /-->
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('contact')}}">Contact</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('faq')}}">FAQ</a>
                 </li>
 
                 <li class="nav-item dropdown">
