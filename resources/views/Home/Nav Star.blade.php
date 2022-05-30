@@ -81,26 +81,18 @@
                        aria-haspopup="true" aria-expanded="false">
                         Hesap
                     </a>
-                    <?php
-                    $a= 1;
-                    if ($a==0 ){
-                    ?>
+                    @auth
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/dashboard">profil</a>
 
+                        </div>
+                    @else
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/login">Giriş yap</a>
                         <a class="dropdown-item" href="/register">Kayıt ol</a>
                     </div>
-                    <?php
-                    }
-                    else{
-                    ?>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/dashboard">profil</a>
+                    @endauth
 
-                    </div>
-                    <?php
-                    }
-                    ?>
                 </li>
             </ul>
         </div>

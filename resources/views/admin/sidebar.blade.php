@@ -90,7 +90,7 @@
         </li>
 
         <li class="nav-item menu-items">
-            <a class="nav-link" href="/admin/comment">
+            <a class="nav-link" href="{{route('admin.comment.index')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-comment-processing-outline"></i>
               </span>

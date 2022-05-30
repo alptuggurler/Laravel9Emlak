@@ -14,12 +14,15 @@
                             <div class="col-lg-8">
                                 <div class="intro-body">
                                     <p class="intro-title-top">Doral , Florida
-                                        <br> 78345</p>
+                                        <br> 78345
+                                        <br> <a href="#" class="intro-title-top">{{$rs->id}}test</a>
+                                    </p>
+
                                     <h1 class="intro-title mb-4">
                                         <span class="color-b">{{$rs->id}} </span> {{$rs->category->title}}
                                             <br> {{$rs->title}}</h1>
                                     <p class="intro-subtitle intro-price">
-                                        <a href="#"><span class="price-a">Buy | {{$rs->price}}TL</span></a>
+                                        <a href="{{route('house',['id'=>$rs->id])}}"><span class="price-a">Buy | {{$rs->price}}TL</span></a>
                                     </p>
                                 </div>
                             </div>

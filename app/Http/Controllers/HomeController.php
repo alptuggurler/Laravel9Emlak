@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Comment;
 use App\Models\Faq;
 use App\Models\House;
 use App\Models\Message;
 use App\Models\Setting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
@@ -87,16 +89,31 @@ class HomeController extends Controller
         return redirect()->route('contact')->with('info','Your message has been sent. Thank you!');
     }
 
+    public function storecomment(Request $request){
+
+        // dd($request); //check
+        $data = new Comment();
+        $data->user_id = Auth::id();
+        $data->house_id = $request->input('house_id');
+        $data->subject = $request->input('subject');
+        $data->review = $request->input('review');
+        $data->rating = $request->input('rating');
+        $data->ip=request()->ip();
+        $data->save();
+        return redirect()->route('house',['id'=> $request->input('house_id')])->with('info','Your comment has been sent. Thank you!');
+    }
 
 
     public function house($id){
         //echo "index";
         $images = DB::table('images')->where('house_id',$id)->get();
+        $reviews = Comment::where('house_id',$id)->where('status','True')->get();
         $data = House::find($id);
 
         return view('home.house',[
             'data'=>$data,
-            'images'=>$images
+            'images'=>$images,
+            'reviews'=>$reviews
         ]);
     }
 

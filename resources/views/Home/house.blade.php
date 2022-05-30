@@ -2,19 +2,153 @@
 
 @section('title', $data->title)
 
+@section('head')
+
+    <!-- Font Awesome Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .checked {
+            color: orange;
+        }
+    </style>
+
+
+    <style>
+
+        .rating {
+            display: inline-block;
+            position: relative;
+            height: 50px;
+            line-height: 50px;
+            font-size: 50px;
+        }
+
+        .rating label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .rating label:last-child {
+            position: static;
+        }
+
+        .rating label:nth-child(1) {
+            z-index: 5;
+        }
+
+        .rating label:nth-child(2) {
+            z-index: 4;
+        }
+
+        .rating label:nth-child(3) {
+            z-index: 3;
+        }
+
+        .rating label:nth-child(4) {
+            z-index: 2;
+        }
+
+        .rating label:nth-child(5) {
+            z-index: 1;
+        }
+
+        .rating label input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+
+        .rating label .icon {
+            float: left;
+            color: transparent;
+        }
+
+        .rating label:last-child .icon {
+            color: #000;
+        }
+
+        .rating:not(:hover) label input:checked ~ .icon,
+        .rating:hover label:hover input ~ .icon {
+            color: #09f;
+        }
+
+        .rating label input:focus:not(:checked) ~ .icon:last-child {
+            color: #000;
+            text-shadow: 0 0 5px #09f;
+        }
+
+        body {font-family: Arial;}
+
+        /* Style the tab */
+        .tab {
+            overflow: hidden;
+
+
+            background-color: #FFFFFF;
+        }
+
+        /* Style the buttons inside the tab */
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        /* Create an active/current tablink class */
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        /* Style the tab content */
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: none;
+            border-top: none;
+        }
+    </style>
+@endsection
 @section('slider')
 
 
 @endsection
 @section('content')
     <!--/ Intro Single star /-->
+
     <section class="intro-single">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-lg-8">
+                    @include('home.messages')
                     <div class="title-single-box">
                         <h1 class="title-single"> </h1>
-                        <span class="color-text-a">{{$data->sehir}} , IL 606543</span>
+                        <span class="color-text-a">{{$data->sehir}} , IL 606543  ,
+
+                            @php
+                                $average = $data->comment->average('rating')
+                            @endphp
+
+                                        <span class="fa fa-star @if(($average)>=1) checked @endif"></span>
+                                        <span class="fa fa-star @if(($average)>=2) checked @endif"></span>
+                                        <span class="fa fa-star @if(($average)>=3) checked @endif"></span>
+                                        <span class="fa fa-star @if(($average)>=4) checked @endif"></span>
+                                        <span class="fa fa-star @if(($average)>=5) checked @endif"></span>
+                            <a href="#">{{number_format($average,1)}}   /   {{$data->comment->count('id')}} Reviews(s)  /   Add Review</a>
+                        </span>
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-4">
@@ -38,7 +172,9 @@
     <!--/ Intro Single End /-->
 
     <!--/ Property Single Star /-->
+
     <section class="property-single nav-arrow-b">
+
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
@@ -114,19 +250,143 @@
                             </div>
                         </div>
                         <div class="col-md-7 col-lg-7 section-md-t3">
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="title-box-d">
-                                        <h3 class="title-d">Property Description</h3>
+
+
+                            <div class="tab">
+                                <button class="tablinks title-d " onclick="openCity(event, 'Detail')">
+                                        <h4 class="title-d">Property Description</h4>
+                                    </button>
+                                <button class="tablinks" onclick="openCity(event, 'Reviews')"><h4 class="title-d">Reviews({{$data->comment->count('id')}})</h4></button>
+                                <button class="tablinks" onclick="openCity(event, 'WriteReviews')"><h4 class="title-d">Write Reviews</h4></button>
+                            </div>
+
+
+                            <div id="Detail" class="tabcontent">
+                            <!--
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="title-box-d">
+                                            <h3 class="title-d">Property Description</h3>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="property-description">
-                                <p class="description color-text-a">
-                                    {!! $data->detail !!}
-                                </p>
+                                !-->
+                                <div class="property-description">
+                                    <p class="description color-text-a">
+                                        {!! $data->detail !!}
+                                    </p>
 
+                                </div>
                             </div>
+
+
+
+
+                            <div id="Reviews" class="tabcontent">
+
+                                @foreach($reviews as $rs)
+                                <div class="col-sm-12 col-md-12">
+                                    <div class="testimonial-author-box">
+
+                                        <h5 class="testimonial-author">{{$rs->user->name}}</h5>
+                                        <h5 class="testimonial-author">{{$rs->created_at}}</h5>
+                                        <span class="fa fa-star @if($rs->rating>=1) checked @endif"></span>
+                                        <span class="fa fa-star @if($rs->rating>=2) checked @endif"></span>
+                                        <span class="fa fa-star @if($rs->rating>=3) checked @endif"></span>
+                                        <span class="fa fa-star @if($rs->rating>=4) checked @endif"></span>
+                                        <span class="fa fa-star @if($rs->rating>=5) checked @endif"></span>
+                                    </div>
+
+
+                                    <div class="testimonials-content">
+
+                                        <strong>{{$rs->subject}}</strong>
+
+                                        <p class="testimonial-text">{{$rs->review}}</p>
+                                    </div>
+
+                                </div>
+                                @endforeach
+                            </div>
+
+
+                            <div id="WriteReviews" class="tabcontent">
+                                <h3>WriteReviews</h3>
+                                <form class="form-a" action="{{route("storecomment")}}" method="post" role="form">
+                                    @csrf
+                                    <div id="sendmessage">Your message has been sent. Thank you!</div>
+                                    <div id="errormessage"></div>
+                                    <div class="row">
+
+                                        <input type="hidden" name="house_id"  value="{{$data->id}}">
+                                        <div class="col-md-12 mb-3">
+                                            <div class="form-group">
+                                                <input type="text" name="name" class="form-control form-control-lg form-control-a" placeholder="Your Name">
+                                                <div class="validation"></div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-12 mb-3">
+                                            <div class="form-group">
+                                                <input type="text" name="subject" class="form-control form-control-lg form-control-a" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
+                                                <div class="validation"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 mb-3">
+                                            <div class="form-group">
+                                                <textarea name="review" class="form-control" name="review" cols="45" rows="8" placeholder=",Review"></textarea>
+                                                <div class="validation"></div>
+                                            </div>
+                                        </div>
+                                        <!-- https://codepen.io/neilpomerleau/pen/wzxzQM !-->
+                                         <div class="form-group rating">
+                                             <label>
+                                                 <input type="radio" name="rating" value="1" />
+                                                 <span class="icon">★</span>
+                                             </label>
+                                             <label>
+                                                 <input type="radio" name="rating" value="2" />
+                                                 <span class="icon">★</span>
+                                                 <span class="icon">★</span>
+                                             </label>
+                                             <label>
+                                                 <input type="radio" name="rating" value="3" />
+                                                 <span class="icon">★</span>
+                                                 <span class="icon">★</span>
+                                                 <span class="icon">★</span>
+                                             </label>
+                                             <label>
+                                                 <input type="radio" name="rating" value="4" />
+                                                 <span class="icon">★</span>
+                                                 <span class="icon">★</span>
+                                                 <span class="icon">★</span>
+                                                 <span class="icon">★</span>
+                                             </label>
+                                             <label>
+                                                 <input type="radio" name="rating" value="5" />
+                                                 <span class="icon">★</span>
+                                                 <span class="icon">★</span>
+                                                 <span class="icon">★</span>
+                                                 <span class="icon">★</span>
+                                                 <span class="icon">★</span>
+                                             </label>
+                                         </div>
+                                        <div class="col-md-12">
+                                            @auth
+                                            <button type="submit" class="btn btn-a">Send Message</button>
+                                            @else
+                                                <a href="/login" class="btn btn-a">For Submit Your Review , Plesse login</a>
+                                            @endauth
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+
+
+
+
                             <div class="row section-t3">
                                 <div class="col-sm-12">
                                     <div class="title-box-d">
@@ -293,5 +553,26 @@
 @endsection
 
 
-
+@section('footer')
+    <script>
+        function openCity(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+    <script>
+        $(':radio').change(function() {
+            console.log('New star rate: ' + this.value);
+        });
+    </script>
+@endsection
 

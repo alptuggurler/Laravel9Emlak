@@ -13,7 +13,7 @@
 
 @endsection
 @section('content')
-    @include("home.Services Star")
+
     @include("home.Property Star")
     @include("home.Agents Star")
     @include("home.News Star")

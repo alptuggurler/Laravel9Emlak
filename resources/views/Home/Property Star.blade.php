@@ -1,5 +1,13 @@
 
-
+@section('head')
+    <!-- Font Awesome Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .checked {
+            color: orange;
+        }
+    </style>
+@endsection
 <!--/ Property Star s/-->
 <section class="section-property section-t8">
     <div class="container">
@@ -40,6 +48,17 @@
                                 <div class="price-box d-flex">
                                     <span class="price-a">Buy | {{$rs->price}}TL</span>
                                 </div>
+                                @php
+                                    $average = $rs->comment->average('rating')
+                                @endphp
+
+                                <span class="fa fa-star @if(($average)>=1) checked @endif"></span>
+                                <span class="fa fa-star @if(($average)>=2) checked @endif"></span>
+                                <span class="fa fa-star @if(($average)>=3) checked @endif"></span>
+                                <span class="fa fa-star @if(($average)>=4) checked @endif"></span>
+                                <span class="fa fa-star @if(($average)>=5) checked @endif"></span>
+                                <span class="link-a">({{$rs->comment->count('id')}})</span>
+                                <br>
                                 <a href="{{route('house',['id'=>$rs->id])}}" class="link-a">Click here to view
                                     <span class="ion-ios-arrow-forward"></span>
                                 </a>
