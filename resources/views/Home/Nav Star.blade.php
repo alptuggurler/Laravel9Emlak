@@ -79,17 +79,21 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false">
-                        Hesap
+                        @auth
+                        {{Auth::user()->name}}
                     </a>
-                    @auth
+
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="/dashboard">profil</a>
+                            <a class="dropdown-item" href="/">profil</a>
+                            <a class="dropdown-item" href="/logoutuser">Logout</a>
 
                         </div>
                     @else
+                        My account
+                    </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/login">Giriş yap</a>
-                        <a class="dropdown-item" href="/register">Kayıt ol</a>
+                        <a class="dropdown-item" href="/loginuser">Giriş yap</a>
+                        <a class="dropdown-item" href="/registeruser">Kayıt ol</a>
                     </div>
                     @endauth
 
