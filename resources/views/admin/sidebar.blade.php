@@ -2,8 +2,8 @@
 <!-- partial:../../partials/_sidebar.htmls -->
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-        <a class="sidebar-brand brand-logo" href="/admin"><img src="{{asset("assets")}}/admin/assets/images/logo.svg" alt="logo" /></a>
-        <a class="sidebar-brand brand-logo-mini" href="/admin"><img src="{{asset("assets")}}/admin/assets/images/logo-mini.svg" alt="logo" /></a>
+        <a class="sidebar-brand brand-logo" href="/admin/"><img src="{{asset("assets")}}/admin/assets/images/logo.svg" alt="logo" /></a>
+        <a class="sidebar-brand brand-logo-mini" href="/admin/"><img src="{{asset("assets")}}/admin/assets/images/logo-mini.svg" alt="logo" /></a>
     </div>
     <ul class="nav">
         <li class="nav-item profile">
@@ -14,7 +14,7 @@
                         <span class="count bg-success"></span>
                     </div>
                     <div class="profile-name">
-                        <h5 class="mb-0 font-weight-normal">Henry Klein</h5>
+                        <h5 class="mb-0 font-weight-normal">{{Auth::user()->name}}</h5>
                         <span>Gold Member</span>
                     </div>
                 </div>
@@ -62,7 +62,7 @@
 
 
         <li class="nav-item menu-items">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="/admin/">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
@@ -72,7 +72,7 @@
 
 
         <li class="nav-item menu-items">
-            <a class="nav-link" href="/admin/category">
+            <a class="nav-link" href="{{route('admin.category.index')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>

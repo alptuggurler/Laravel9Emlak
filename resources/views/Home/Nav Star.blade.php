@@ -88,14 +88,15 @@
                             <a class="dropdown-item" href="/logoutuser">Logout</a>
 
                         </div>
-                    @else
+                    @endauth
+                    @guest
                         My account
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/loginuser">Giriş yap</a>
                         <a class="dropdown-item" href="/registeruser">Kayıt ol</a>
                     </div>
-                    @endauth
+                    @endguest
 
                 </li>
             </ul>
