@@ -10,6 +10,7 @@ use App\Http\Controllers\AdminPanel\MessageController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
 use App\Http\Controllers\AdminPanel\CategoryController as AdminCategoryController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -40,11 +41,11 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::post('/storemessage', [HomeController::class, 'storemessage'])->name('storemessage');
 Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
 Route::post('/storecomment', [HomeController::class, 'storecomment'])->name('storecomment');
-Route::view('/loginuser' , 'home.login');
-Route::view('/registeruser' , 'home.register');
+Route::view('/loginuser' , 'home.login')->name('loginuser');
+Route::view('/registeruser' , 'home.register')->name('registeruser');
 Route::get('/logoutuser' ,[HomeController::class,'logout'])->name('logoutuser');
 
-Route::view('/loginadmin' , 'admin.login');
+Route::view('/loginadmin' , 'admin.login')->name('loginadmin');
 Route::post('/loginadmincheck' ,[HomeController::class,'loginadmincheck'])->name('loginadmincheck');
 
 
@@ -63,8 +64,19 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 
 
+//******************* User aurh control ********************
+Route::middleware('auth')->group(function (){
+
+//******************* User Panel ROUTESS ********************
+    Route::prefix('userpanel')->name('userpanel.')->controller(UserController::class)->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/reviews', 'reviews')->name('reviews');
+        Route::get('/reviewdestroy/{id}', 'reviewdestroy')->name('reviewdestroy');
+        Route::get('/houses', 'houses')->name('houses');
+    });
+
 //******************* ADMIN PANEL ROUTESS ********************
-Route::prefix('/admin')->name('admin.')->group(function () {
+Route::middleware('admin')->prefix('/admin')->name('admin.')->group(function () {
     Route::get('/', [AdminHomeController::class, 'index'])->name('index');
 
 
@@ -132,6 +144,7 @@ Route::prefix('/admin')->name('admin.')->group(function () {
         Route::get('/destroy/{id}', 'destroy')->name('destroy');
 
     });
+});
 
     //******************* ADMIN User ROUTESS ********************
     Route::prefix('/user')->name('user.')->controller(AdminUserController::class)->group(function () {

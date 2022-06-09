@@ -1,6 +1,6 @@
 @extends('layouts.homebase')
 
-@section('title','References |'. $setting->title)
+@section('title','Contact |'. $setting->title)
 @section('description', $setting->description)
 @section('keywords', $setting->keywords)
 @section('icon', Storage::url($setting->icon))

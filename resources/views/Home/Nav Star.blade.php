@@ -84,10 +84,12 @@
                     </a>
 
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="/">profil</a>
+                            <a class="dropdown-item" href="{{route('userpanel.index')}}">My Profile</a>
+                            <a class="dropdown-item" href="/">My Houses</a>
+                            <a class="dropdown-item" href="/">My Reviews</a>
                             <a class="dropdown-item" href="/logoutuser">Logout</a>
 
-                        </div>
+        </div>
                     @endauth
                     @guest
                         My account
