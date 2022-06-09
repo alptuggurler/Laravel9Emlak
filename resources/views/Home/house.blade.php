@@ -14,7 +14,10 @@
 
 
     <style>
-
+        .card-box-ico {
+            padding: 1rem 3rem 1rem 2.5rem;
+            border: hidden;
+        }
         .rating {
             display: inline-block;
             position: relative;
@@ -184,7 +187,7 @@
                         </div>
                         @foreach($images as $rs)
                             <div class="carousel-item-b">
-                                <img src="{{Storage::url($rs->image)}}" alt="">
+                                <img src="{{Storage::url($rs->image)}}" width="1080" height="566" alt="">
                             </div>
                         @endforeach
 
@@ -206,6 +209,7 @@
                                     <div class="col-sm-12">
                                         <div class="title-box-d section-t4">
                                             <h3 class="title-d">Quick Summary</h3>
+                                            <h4> {{$data->ilce}}    / {{$data->sehir}} </h4>
                                         </div>
                                     </div>
                                 </div>
@@ -215,32 +219,76 @@
                                             <strong>Property ID:</strong>
                                             <span>{{$data->id}}</span>
                                         </li>
+
                                         <li class="d-flex justify-content-between">
-                                            <strong>Location:</strong>
-                                            <span>{{$data->sehir}}, IL 606543</span>
+                                            <strong>Create date</strong>
+                                            <span>{{ date('d-m-Y', strtotime($rs->created_at))}}</span>
                                         </li>
                                         <li class="d-flex justify-content-between">
-                                            <strong>Property Type:</strong>
-                                            <span>{{$data->category->title}}</span>
+                                            <strong>Update date</strong>
+                                            <span>{{ date('d-m-Y', strtotime($rs->updated_at))}}</span>
                                         </li>
+
                                         <li class="d-flex justify-content-between">
                                             <strong>Status:</strong>
                                             <span>Sale</span>
                                         </li>
+
+                                        <li class="d-flex justify-content-between">
+                                            <strong>Property Type:</strong>
+                                            <span>{{$data->category->title}}</span>
+                                        </li>
+
                                         <li class="d-flex justify-content-between">
                                             <strong>Area:</strong>
                                             <span>{{$data->square}}
                         <sup>2</sup>
                       </span>
                                         </li>
+
                                         <li class="d-flex justify-content-between">
-                                            <strong>Beds:</strong>
-                                            <span>{{$data->bedrooms}}</span>
+                                            <strong>Number of Room:</strong>
+                                            <span>{{$data->number_of_room}}</span>
                                         </li>
+
+                                        <li class="d-flex justify-content-between">
+                                            <strong>Year built</strong>
+                                            <span>{{$data->year_built}}</span>
+                                        </li>
+
+                                        <li class="d-flex justify-content-between">
+                                            <strong>Floor Location</strong>
+                                            <span>{{$data->floor_location}}</span>
+                                        </li>
+
+                                        <li class="d-flex justify-content-between">
+                                            <strong>Number of Floors</strong>
+                                            <span>{{$data->number_of_floors}}</span>
+                                        </li>
+
+                                        <li class="d-flex justify-content-between">
+                                            <strong>Heating:</strong>
+                                            <span>{{$data->heating}}</span>
+                                        </li>
+
                                         <li class="d-flex justify-content-between">
                                             <strong>Baths:</strong>
                                             <span>{{$data->bathrooms}}</span>
                                         </li>
+
+                                        <li class="d-flex justify-content-between">
+                                            <strong>Dues:</strong>
+                                            <span>{{$data->dues}}</span>
+                                        </li>
+
+
+
+                                        <li class="d-flex justify-content-between">
+                                            <strong>Location:</strong>
+                                            <span>{{$data->ilce}}, {{$data->sehir}}</span>
+                                        </li>
+
+
                                         <li class="d-flex justify-content-between">
                                             <strong>Garage:</strong>
                                             <span>{{$data->parking}}</span>
