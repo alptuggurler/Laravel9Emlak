@@ -29,7 +29,7 @@
                     <a class="nav-link" href="{{route('references')}}">References</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">House</a>
+                    <a class="nav-link" href="{{route('property')}}">Property</a>
                 </li>
 
                 <li class="nav-item dropdown">
@@ -85,8 +85,8 @@
 
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{route('userpanel.index')}}">My Profile</a>
-                            <a class="dropdown-item" href="/">My Houses</a>
-                            <a class="dropdown-item" href="/">My Reviews</a>
+                            <a class="dropdown-item" href="{{route('userpanel.houses')}}">My Houses</a>
+                            <a class="dropdown-item" href="{{route('userpanel.reviews')}}">My Reviews</a>
                             <a class="dropdown-item" href="/logoutuser">Logout</a>
 
         </div>

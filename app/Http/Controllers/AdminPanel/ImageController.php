@@ -17,9 +17,10 @@ class ImageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($hid)
+    public function index(Request $request,$hid)
     {
         //
+        dd($request);
         $house = House::find($hid);
         //$images = Image::where('product_id',$hid);
         $images = DB::table('images')->where('house_id',$hid)->get();
@@ -48,6 +49,7 @@ class ImageController extends Controller
     public function store(Request $request,$hid)
     {
         //
+
         $data = new Image();
         $data->house_id = $hid;
         $data->title = $request->title;

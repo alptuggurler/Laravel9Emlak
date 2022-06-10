@@ -52,7 +52,8 @@
                                 @foreach( $data  as $rs)
                                 <tr>
                                     <td> {{$rs->id}} </td>
-                                    <td><a href="{{route('admin.house.show',['id'=>$rs->house_id])}}">{{$rs->house->title}}</a></td>
+                                    <td><a href="{{route('admin.house.show',['id'=>$rs->house_id])}}">
+                                            {{$rs->house->title}}</a></td>
                                     <td> {{$rs->user->name}} </td>
                                     <td> {{$rs->subject}} </td>
                                     <td> {{$rs->review}} </td>

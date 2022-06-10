@@ -222,11 +222,11 @@
 
                                         <li class="d-flex justify-content-between">
                                             <strong>Create date</strong>
-                                            <span>{{ date('d-m-Y', strtotime($rs->created_at))}}</span>
+                                            <span>{{ date('d-m-Y', strtotime($data->created_at))}}</span>
                                         </li>
                                         <li class="d-flex justify-content-between">
                                             <strong>Update date</strong>
-                                            <span>{{ date('d-m-Y', strtotime($rs->updated_at))}}</span>
+                                            <span>{{ date('d-m-Y', strtotime($data->updated_at))}}</span>
                                         </li>
 
                                         <li class="d-flex justify-content-between">
@@ -434,7 +434,7 @@
 
 
 
-
+                        <!--/ Silinilebilir sor
                             <div class="row section-t3">
                                 <div class="col-sm-12">
                                     <div class="title-box-d">
@@ -458,7 +458,7 @@
                         </div>
                     </div>
                 </div>
-
+ /-->
 
                 <!--/ Silinilebilir sor
                 <div class="col-md-10 offset-md-1">
@@ -492,6 +492,8 @@
                 </div>
                 Silinilebilir sor /-->
 
+
+                        <!--/
 
                 <div class="col-md-12">
                     <div class="row section-t3">
@@ -593,6 +595,8 @@
                         </div>
                     </div>
                 </div>
+
+                            /-->
             </div>
         </div>
     </section>

@@ -25,8 +25,8 @@ class HomeController extends Controller
     public function index(){
         //echo "index";
         $page="home";
-        $sliderdata =House::limit(4)->get();
-        $houselist1 =House::limit(6)->get();
+        $sliderdata =House::limit(4)->where('status','True')->get();
+        $houselist1 =House::limit(6)->where('status','True')->get();
         $setting= Setting::first();
 
         return view('home.index',[
@@ -61,6 +61,13 @@ class HomeController extends Controller
 
         return view('home.contact',[
             'setting'=>$setting
+        ]);
+    }
+    public function property(){
+        $houselist= House::all()->where('status','True');
+
+        return view('home.property',[
+            'houselist'=>$houselist
         ]);
     }
 
@@ -143,6 +150,7 @@ class HomeController extends Controller
         //dd($request);
         $credentials = $request->validate([
             'email' => ['required', 'email'],
+            'password' => ['required'],
             'password' => ['required'],
         ]);
 

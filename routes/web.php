@@ -11,6 +11,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
 use App\Http\Controllers\AdminPanel\CategoryController as AdminCategoryController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserHouseController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -38,6 +39,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/references', [HomeController::class, 'references'])->name('references');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::get('/property', [HomeController::class, 'property'])->name('property');
 Route::post('/storemessage', [HomeController::class, 'storemessage'])->name('storemessage');
 Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
 Route::post('/storecomment', [HomeController::class, 'storecomment'])->name('storecomment');
@@ -72,8 +74,18 @@ Route::middleware('auth')->group(function (){
         Route::get('/', 'index')->name('index');
         Route::get('/reviews', 'reviews')->name('reviews');
         Route::get('/reviewdestroy/{id}', 'reviewdestroy')->name('reviewdestroy');
-        Route::get('/houses', 'houses')->name('houses');
+        Route::prefix('houses')->group(function (){
+            Route::get('/',[UserHouseController::class,'houses'])->name('houses');
+            Route::get('create',[UserHouseController::class,'create'])->name('housesCreate');
+            Route::post('store',[UserHouseController::class,'store'])->name('housesStore');
+            Route::get('housesEdit/{id}',[UserHouseController::class,'housesEdit'])->name('housesEdit');
+            Route::get('houseDestroy/{id}',[UserHouseController::class,'houseDestroy'])->name('houseDestroy');
+            Route::get('houseImage/{id}',[UserHouseController::class,'houseImage'])->name('houseImage');
+
+        });
+
     });
+
 
 //******************* ADMIN PANEL ROUTESS ********************
 Route::middleware('admin')->prefix('/admin')->name('admin.')->group(function () {
@@ -144,7 +156,7 @@ Route::middleware('admin')->prefix('/admin')->name('admin.')->group(function () 
         Route::get('/destroy/{id}', 'destroy')->name('destroy');
 
     });
-});
+
 
     //******************* ADMIN User ROUTESS ********************
     Route::prefix('/user')->name('user.')->controller(AdminUserController::class)->group(function () {
@@ -157,7 +169,7 @@ Route::middleware('admin')->prefix('/admin')->name('admin.')->group(function () 
         Route::get('/destroyrole/{uid}/{rid}', 'destroyrole')->name('destroyrole');
 
     });
-
+    });
 });
 
 

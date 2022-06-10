@@ -151,11 +151,7 @@
                             </div>
 
 
-                            <!-- salers -->
-                            <div class="form-group">
-                                <label for="exampleInputName1" >salers</label>
-                                <input type="text" class="form-control" name="salers" placeholder="Salers">
-                            </div>
+
 
                             <!-- sehir -->
                             <div class="form-group">

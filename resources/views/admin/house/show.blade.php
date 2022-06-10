@@ -121,9 +121,14 @@
                             </tr>
 
                             <tr>
-                                <th >salers</th>
-                                <td>{{$data->salers}}</td>
+                                <th >saler</th>
+                                <td>@if($data->user_id != 0)
+                                        {{$data->salers}}
+                                    @else
+                                    Admin
+                                    @endif</td>
                             </tr>
+
 
                             <tr>
                                 <th >sehir</th>

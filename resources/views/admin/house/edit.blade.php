@@ -155,11 +155,6 @@
                                 <input type="number" class="form-control" name="dues" value="{{$data->dues}}">
                             </div>
 
-                            <!-- salers -->
-                            <div class="form-group">
-                                <label for="exampleInputName1">salers</label>
-                                <input type="text" class="form-control" name="salers" value="{{$data->salers}}">
-                            </div>
 
 
 
