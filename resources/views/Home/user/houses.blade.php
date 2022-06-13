@@ -62,9 +62,9 @@
                                     <th> Square </th>
 
                                     <th> Image </th>
-                                    <th> Image Galery </th>
-                                    <th> Status </th>
-                                    <!--/ <th> Edit </th>/-->
+                                    <!--/  <th> Image Galery </th>/-->
+                                     <th> Status </th>
+                                     <!--/ <th> Edit </th>/-->
                                     <th> Delete</th>
                                     <th> Show </th>
                                 </tr>
@@ -86,12 +86,12 @@
                                                 <img src="{{Storage::url($rs->image)}}" style="height: 40px">
                                             @endif
                                         </td>
-                                        <td>
-                                            <a href="{{route('userpanel.houseImage',['id'=>$rs->id])}}"
+                                    <!--/ <td>
+                                        <a href="{{route('userpanel.houseImage',['hid'=>$rs->id])}}"
                                                onclick="return !window.open(this.href,'','top=50 left=100  width =1100, height=700')"> <img src="{{asset("assets")}}/admin/assets/images/RessimGalery.png" style="height: 40px"></a>
-                                        </td>
+                                        </td>/-->
                                         <td> {{$rs->status}} </td>
-                                    <!--/<td><a href="{{route('userpanel.housesEdit',['id'=>$rs->id])}}", class ='btn btn-block btn-success btn-sm'>Edit</a></td>/-->
+                                    <!--/ <td><a href="{{route('userpanel.houseEdit',['id'=>$rs->id])}}", class ='btn btn-block btn-success btn-sm'>Edit</a></td>/-->
                                         <td><a href="{{route('userpanel.houseDestroy',['id'=>$rs->id])}}", class ="btn btn-block btn-danger btn-sm"
                                                onclick="return confirm('Deleting !! Are you sure ?')">Delete</a></td>
                                         <td><a href="{{route('house',['id'=>$rs->id])}}", class ='btn btn-block btn-info btn-sm'>Show</a></td>

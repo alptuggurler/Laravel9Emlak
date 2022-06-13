@@ -113,12 +113,13 @@
                     <ul class="list-inline">
                         <li class="list-inline-item">
                             <a href="#">
-                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                                <a class="fa fa-facebook" aria-hidden="true" href="https://www.facebook.com/facebook"></a>
+
                             </a>
                         </li>
                         <li class="list-inline-item">
                             <a href="#">
-                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                                <a class="fa fa-twitter" aria-hidden="true" href="https://www.twitter.com/twitter"></a>
                             </a>
                         </li>
                         <li class="list-inline-item">

@@ -19,7 +19,7 @@
                         <h4 class="card-title">{{$house->title}}</h4>
                         <p class="card-description"> Category form elements </p>
 
-                        <form role="form" action="{{route('admin.image.store',['hid'=>$house->id])}}"  method="post" enctype="multipart/form-data" >
+                        <form role="form" action="{{route('userpanel.houseStore',['hid'=>$house->id])}}"  method="post" enctype="multipart/form-data" >
                             @csrf
 
 
@@ -59,7 +59,7 @@
                             <table class="table table-bordered">
                                 <thead>
                                 <tr>
-                                    <th> ID </th>
+                                    <th> ID test</th>
 
                                     <th> Title </th>
                                     <th> Image </th>

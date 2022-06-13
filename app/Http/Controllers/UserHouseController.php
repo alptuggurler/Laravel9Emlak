@@ -99,17 +99,31 @@ class UserHouseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function housesEdit(House $house,$id)
+    public function houseEdit(House $house,$id)
     {
         //
         //echo "edit page id : ",$id;
 
         $data = House::find($id);
         $datalist = Category::all();
-        return view('userpanel.housesEdit',[
+        return view('admin.house.edit',[
             'data' => $data,
             'datalist' => $datalist
         ]);
+    }
+
+    public function houseStore(Request $request,$hid)
+    {
+        //
+dd($request);
+        $data = new Image();
+        $data->house_id = $hid;
+        $data->title = $request->title;
+        if($request->file('image')){
+            $data->image= $request->file('image')->store('images');
+        }
+        $data->save();
+        return redirect()->route('admin.image.index',['hid'=>$hid]);
     }
 
     /**
@@ -143,30 +157,16 @@ class UserHouseController extends Controller
         return redirect(route('userpanel.houses'));
     }
 
-    public function houseImage($id)
+    public function imageIndex(Request $request,$hid)
     {
         //
-
-
-        $house = House::find($id);
-        //$images = Image::where('product_id',);
-        $images =DB::table('images')->where('house_id',$id)->get();
+        //dd($request);
+        $house = House::find($hid);
+        //$images = Image::where('product_id',$hid);
+        $images = DB::table('images')->where('house_id',$hid)->get();
         return view(route('userpanel.houseImage'),[
             'house'=>$house,
             'images'=>$images
         ]);
-    }
-
-    public function houseImageStore(Request $request,$hid)
-    {
-        //
-        $data = new Image();
-        $data->house_id = $hid;
-        $data->title = $request->title;
-        if($request->file('image')){
-            $data->image= $request->file('image')->store('images');
-        }
-        $data->save();
-        return redirect()->route('admin.image.index',['hid'=>$hid]);
     }
 }

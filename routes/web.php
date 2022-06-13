@@ -78,10 +78,14 @@ Route::middleware('auth')->group(function (){
             Route::get('/',[UserHouseController::class,'houses'])->name('houses');
             Route::get('create',[UserHouseController::class,'create'])->name('housesCreate');
             Route::post('store',[UserHouseController::class,'store'])->name('housesStore');
-            Route::get('housesEdit/{id}',[UserHouseController::class,'housesEdit'])->name('housesEdit');
-            Route::get('houseDestroy/{id}',[UserHouseController::class,'houseDestroy'])->name('houseDestroy');
-            Route::get('houseImage/{id}',[UserHouseController::class,'houseImage'])->name('houseImage');
 
+            Route::get('housesEdit/{id}',[UserHouseController::class,'houseEdit'])->name('houseEdit');
+            Route::get('houseDestroy/{id}',[UserHouseController::class,'houseDestroy'])->name('houseDestroy');
+
+
+            Route::get('houseImage/{hid}', [UserHouseController::class,'imageIndex'])->name('houseImage');
+            Route::post('/store/{hid}', [UserHouseController::class,'imageStore'])->name('store');
+            Route::get('/destroy/{hid}/{id}', [UserHouseController::class,'imageDestroy'])->name('destroy');
         });
 
     });
